@@ -1,0 +1,93 @@
+/* Threshold design tokens (generated from the design system's tokens.json). */
+:root, [data-theme="light"] {
+  --surface-0: #ffffff;
+  --surface-100: #f5f4f0;
+  --surface-200: #e9e8e3;
+  --ink: #111111;
+  --ink-muted: #565656;
+  --line: #d9d8d2;
+  --line-strong: #7a7a7a;
+  --action: #111111;
+  --on-action: #ffffff;
+  --sun: #ffd60a;
+  --blush: #ffb3a7;
+  --mint: #a6f4b8;
+  --on-bright: #111111;
+  --tomato: #c8232c;
+  --cobalt: #1d4ed8;
+  --lcat: var(--cobalt);
+  --on-lcat: #ffffff;
+  --macat: var(--tomato);
+  --on-macat: #ffffff;
+  --success: #0e7c66;
+  --danger: #b3261e;
+  --focus-ring: #111111;
+  --shadow-drawer: -24px 0 64px rgba(17,17,17,0.18);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+  --surface-0: #1a1a1a;
+  --surface-100: #111111;
+  --surface-200: #262626;
+  --ink: #f5f4f0;
+  --ink-muted: #b0b0b0;
+  --line: #333333;
+  --line-strong: #8a8a8a;
+  --action: #f5f4f0;
+  --on-action: #111111;
+  --sun: #ffd60a;
+  --blush: #ffb3a7;
+  --mint: #a6f4b8;
+  --on-bright: #111111;
+  --tomato: #c8232c;
+  --cobalt: #1d4ed8;
+  --lcat: #8ab0ff;
+  --on-lcat: #111111;
+  --macat: #ff7b72;
+  --on-macat: #111111;
+  --success: #5fd3b8;
+  --danger: #ff8a7a;
+  --focus-ring: #ffd60a;
+  --shadow-drawer: -24px 0 64px rgba(0,0,0,0.6);
+  }
+}
+[data-theme="dark"] {
+  --surface-0: #1a1a1a;
+  --surface-100: #111111;
+  --surface-200: #262626;
+  --ink: #f5f4f0;
+  --ink-muted: #b0b0b0;
+  --line: #333333;
+  --line-strong: #8a8a8a;
+  --action: #f5f4f0;
+  --on-action: #111111;
+  --sun: #ffd60a;
+  --blush: #ffb3a7;
+  --mint: #a6f4b8;
+  --on-bright: #111111;
+  --tomato: #c8232c;
+  --cobalt: #1d4ed8;
+  --lcat: #8ab0ff;
+  --on-lcat: #111111;
+  --macat: #ff7b72;
+  --on-macat: #111111;
+  --success: #5fd3b8;
+  --danger: #ff8a7a;
+  --focus-ring: #ffd60a;
+  --shadow-drawer: -24px 0 64px rgba(0,0,0,0.6);
+}
+:root {
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+  --space-24: 96px;
+  --radius-sm: 10px;
+  --radius-md: 24px;
+  --radius-lg: 40px;
+  --radius-pill: 999px;
+  --font-sans: "Archivo", "Helvetica Neue", Arial, sans-serif;
+}
