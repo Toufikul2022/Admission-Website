@@ -38,12 +38,42 @@
 
   /* split sections: panel + content */
   .split { display: grid; gap: var(--space-4); }
-  .courses { grid-template-columns: 1fr 1fr 1fr; }
-  .courses .th-panel { justify-content: space-between; }
-  .explore { display: grid; gap: var(--space-3); }
-  .explore b { font: 700 20px/24px var(--font-sans); }
-  .explore div { display: flex; gap: var(--space-2); flex-wrap: wrap; align-items: center; }
-  .explore .th-tag { background: var(--surface-0); }
+  /* courses: three-column bento — tall intro panel, then a tile + colour card per course */
+  .courses { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
+  .c-col { display: flex; flex-direction: column; gap: var(--space-6); min-width: 0; }
+  .c-card { border-radius: var(--radius-lg); padding: var(--space-8) var(--space-8); color: var(--on-bright); display: flex; flex-direction: column; gap: var(--space-3); }
+  .c-card--grape { background: var(--grape); }
+  .c-card--lime { background: var(--lime); }
+  .c-card--tangerine { background: var(--tangerine); }
+  .c-intro { flex: 1; justify-content: space-between; gap: var(--space-8); min-height: 760px; }
+  .c-intro .th-label { color: var(--on-bright); white-space: nowrap; }
+  .c-intro__top { display: flex; justify-content: space-between; align-items: flex-start; gap: var(--space-4); }
+  .c-doodle { width: 46%; max-width: 200px; margin-right: 12%; }
+  .c-intro__body { display: grid; gap: var(--space-6); }
+  .c-title { margin: 0; font: 900 28px/1.05 var(--font-sans); font-stretch: 125%; letter-spacing: -0.01em; }
+  .c-title--xl { font-size: 42px; line-height: 1.02; }
+  .c-sub { margin: 0; font: 700 18px/24px var(--font-sans); }
+  .c-desc { margin: 0; font: 400 18px/24px var(--font-sans); max-width: 40ch; }
+  .c-pills { list-style: none; margin: var(--space-2) 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: var(--space-2); }
+  .c-pills li { height: 32px; display: inline-flex; align-items: center; padding: 0 var(--space-3); border-radius: var(--radius-pill); box-shadow: inset 0 0 0 1.5px var(--on-bright); font-size: 14px; }
+  .c-seats { display: grid; gap: var(--space-2); font-size: 14px; margin-top: var(--space-2); }
+  .c-seats__bar { height: 8px; border-radius: var(--radius-pill); background: rgba(17,17,17,.18); overflow: hidden; }
+  .c-seats__bar div { height: 100%; border-radius: inherit; background: var(--on-bright); }
+  .c-foot { display: flex; gap: var(--space-4); align-items: center; flex-wrap: wrap; margin-top: var(--space-3); }
+  .c-foot .th-btn { background: #111111; color: #ffffff; }
+  .c-foot .th-btn .th-btn__arrow { background: #ffffff; color: #111111; }
+  .c-foot .th-btn::before { background: #ffffff; }
+  .c-foot .th-btn:hover { color: #111111; }
+  .c-foot .th-btn:hover .th-btn__arrow { background: #111111; color: #ffffff; }
+  .c-link { color: var(--on-bright); font-weight: 700; text-underline-offset: 4px; }
+  .c-tile { position: relative; flex: 1; min-height: 340px; border-radius: var(--radius-lg); overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .c-tile--lcat { background: var(--cobalt); }
+  .c-tile--macat { background: var(--tomato); }
+  .c-tile .th-label { position: absolute; top: var(--space-6); left: var(--space-6); color: #ffffff; z-index: 1; }
+  .c-tile { padding: 72px var(--space-6) 96px; }
+  .c-art { width: 78%; max-width: 340px; max-height: 100%; transition: transform .6s cubic-bezier(.2,.8,.2,1); }
+  .c-tile:hover .c-art { transform: scale(1.05) rotate(-2deg); }
+  .c-tile__acronym { position: absolute; left: var(--space-6); bottom: var(--space-4); font: 900 64px/1 var(--font-sans); font-stretch: 125%; color: #ffffff; }
 
   /* how it works: panel + horizontal carousel */
   .how { grid-template-columns: 1fr 2fr; }
@@ -127,6 +157,9 @@
 
   @media (max-width: 1000px) {
     .courses, .how, .apply, .faq-sec { grid-template-columns: 1fr; }
+    .c-intro { min-height: 0; }
+    .c-tile { min-height: 300px; }
+    .c-title--xl { font-size: 34px; }
     .nav-links { display: none; }
     .hero { height: auto; min-height: 760px; padding-top: 140px; }
     .nav { top: var(--space-2); left: var(--space-2); right: var(--space-2); }

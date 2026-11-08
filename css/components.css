@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap');
 
 /* Threshold — component styles. Every value reads a token from tokens.css. */
 .th { font-family: var(--font-sans); color: var(--ink); background: var(--surface-100); font-size: 16px; line-height: 22px; -webkit-font-smoothing: antialiased; }
