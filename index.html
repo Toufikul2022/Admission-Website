@@ -108,13 +108,20 @@
 
   <div class="gap"><section class="th-marquee th-marquee--cobalt" aria-label="$0 tuition, materials, mocks. 8 hrs a week, weekends. 1:25 mentor to student."><div class="th-marquee__track" aria-hidden="true"><span class="th-marquee__item">$0 tuition, materials, mocks <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.9 6.6 5.4 11.1 12 12-6.6.9-11.1 5.4-12 12-.9-6.6-5.4-11.1-12-12C6.6 11.1 11.1 6.6 12 0z"/></svg></span><span class="th-marquee__item">8 hrs a week, weekends <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.9 6.6 5.4 11.1 12 12-6.6.9-11.1 5.4-12 12-.9-6.6-5.4-11.1-12-12C6.6 11.1 11.1 6.6 12 0z"/></svg></span><span class="th-marquee__item">1:25 mentor to student <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.9 6.6 5.4 11.1 12 12-6.6.9-11.1 5.4-12 12-.9-6.6-5.4-11.1-12-12C6.6 11.1 11.1 6.6 12 0z"/></svg></span></div><div class="th-marquee__track" aria-hidden="true"><span class="th-marquee__item">$0 tuition, materials, mocks <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.9 6.6 5.4 11.1 12 12-6.6.9-11.1 5.4-12 12-.9-6.6-5.4-11.1-12-12C6.6 11.1 11.1 6.6 12 0z"/></svg></span><span class="th-marquee__item">8 hrs a week, weekends <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.9 6.6 5.4 11.1 12 12-6.6.9-11.1 5.4-12 12-.9-6.6-5.4-11.1-12-12C6.6 11.1 11.1 6.6 12 0z"/></svg></span><span class="th-marquee__item">1:25 mentor to student <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 0c.9 6.6 5.4 11.1 12 12-6.6.9-11.1 5.4-12 12-.9-6.6-5.4-11.1-12-12C6.6 11.1 11.1 6.6 12 0z"/></svg></span></div></section></div>
 
-  <section class="split apply pad gap" id="apply">
-    <div class="th-panel th-panel--mint rv">
+  <section class="apply pad gap" id="apply">
+    <div class="apply-card rv">
       <span class="th-label">Application form</span>
-      <div style="display:grid;gap:24px"><h2 class="th-panel__title">Reserve your free seat.</h2><p class="th-panel__desc">Seats are first come, first served. You'll hear from us within two working days.</p></div>
-      <ul class="checks"><li>No fees now or later</li><li>No card or bank details asked</li><li>Switch tracks in the first two weeks</li><li>Your data stays with us — never sold</li></ul>
-      <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><button class="th-btn js-apply" type="button">Apply in 3 minutes <span class="th-btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><span style="font-size:14px">Takes about 3 minutes</span></div>
+      <div class="apply-card__body">
+        <h2 class="apply-card__title">Reserve your free seat.</h2>
+        <p class="apply-card__desc">Seats are first come, first served. You'll hear from us within two working days.</p>
+        <ul class="feat"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M14.5 9.2c-.6-.8-1.5-1.2-2.6-1.2-1.5 0-2.6.8-2.6 2s1.1 1.6 2.6 2 2.8.9 2.8 2.1-1.2 2-2.8 2c-1.2 0-2.2-.5-2.8-1.3M12 6.5V8m0 8v1.5"/></svg><span>No fees now or later</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18M6.5 14.5h4M4 4l16 16"/></svg><span>No card or bank details asked</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg><span>Switch tracks in the first two weeks</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10.5" width="14" height="10" rx="2"/><path d="M8 10.5V7.5a4 4 0 0 1 8 0v3M12 14.5v2.5"/></svg><span>Your data stays with us — never sold</span></li></ul>
+        <div class="apply-card__cta"><button class="th-btn js-apply" type="button">Apply in 3 minutes <span class="th-btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button><span>Takes about 3 minutes</span></div>
+      </div>
     </div>
+    <div class="tunnel rv" aria-hidden="true"><canvas id="tunnel"></canvas></div>
+  </section>
+
+  <section class="pad gap">
     <figure class="quote rv" style="margin:0">
       <span class="quote-mark" aria-hidden="true">“</span>
       <span class="th-label">Student story</span>
@@ -188,4 +195,5 @@
 </aside>
 
 <script src="js/site.js"></script>
+<script src="js/tunnel.js"></script>
 </body></html>
