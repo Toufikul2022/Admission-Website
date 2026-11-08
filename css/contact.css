@@ -49,7 +49,7 @@
 .formcard .th-label { align-self: flex-start; color: #111111; }
 .formcard__title { margin: var(--space-12) 0 var(--space-4); font-size: clamp(36px, 3.6vw, 64px); line-height: 1.02; }
 .formcard__lede { margin: 0 0 var(--space-12); font: 400 20px/26px var(--font-sans); }
-.contact-page form { display: grid; gap: var(--space-8); }
+.formcard form { display: grid; gap: var(--space-8); }
 .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-8) var(--space-6); }
 .uf { display: grid; gap: var(--space-2); }
 .uf label { font: 400 16px/20px var(--font-sans); }
@@ -72,8 +72,9 @@
 .send:hover::before { transform: none; }
 .send svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
 .send[disabled] { opacity: .6; cursor: default; }
-.contact-page .th-notice { background: #ffffff; color: #111111; }
-.contact-page .th-notice .th-muted { color: #565656; }
+.formcard .th-notice { background: #ffffff; color: #111111; }
+.formcard .th-notice .th-muted { color: #565656; }
+.formcard .hidden { display: none !important; }
 
 @media (max-width: 1100px) {
   .shell { grid-template-columns: 1fr; padding: var(--space-4); gap: var(--space-4); }
@@ -91,4 +92,12 @@
   .connect__main { padding: var(--space-8); }
   .formcard { padding: var(--space-6) var(--space-6) var(--space-8); }
   .formcard__title { margin-top: var(--space-8); }
+}
+
+/* Home page contact section: the same middle + form columns inside a green block */
+.contact-sec { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.42fr); gap: var(--space-6); padding: var(--space-6); border-radius: var(--radius-lg); background: var(--meadow); color: var(--on-bright); }
+.contact-sec .mid { min-height: 860px; }
+@media (max-width: 1100px) {
+  .contact-sec { grid-template-columns: 1fr; padding: var(--space-4); gap: var(--space-4); }
+  .contact-sec .mid { min-height: 0; order: 2; grid-template-rows: 300px auto; }
 }

@@ -1,5 +1,5 @@
 (function () {
-  var form = document.getElementById('contact');
+  var form = document.getElementById('contact-form');
   var btn = form.querySelector('.send'), label = btn.querySelector('.send__label');
   var checks = [
     ['c-name', function (v) { return v.trim().length > 0; }, 'Add your name.'],
