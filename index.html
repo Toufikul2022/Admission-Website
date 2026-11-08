@@ -127,7 +127,9 @@
 <aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dtitle" aria-hidden="true">
   <div class="th-arrowshead"><svg viewBox="0 0 72 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M0 16h70M56 2l14 14-14 14"/></svg><h2 id="dtitle">Reserve your free seat.</h2><svg viewBox="0 0 72 32" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M72 16H2M16 2 2 16l14 14"/></svg></div>
   <button class="th-arrowbtn drawer-close" id="close" type="button" aria-label="Close application"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  <form id="form" novalidate>
+  <form id="form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+    <input type="hidden" name="_subject" value="New Threshold application">
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
     <ol class="th-steps" aria-label="Application progress">
       <li class="th-step is-done"><div class="th-step__bar"></div><span class="th-step__label">Track</span></li>
       <li class="th-step is-current" aria-current="step"><div class="th-step__bar"></div><span class="th-step__label">Details</span></li>
@@ -139,16 +141,17 @@
       <label><input type="radio" name="track" value="macat"><strong>MACAT</strong><span>Medical · 16 weeks · Jan 17</span></label>
     </fieldset>
     <div class="row2">
-      <div class="th-field"><label class="th-field__label" for="fn">Full name</label><input class="th-input" id="fn" required autocomplete="name" placeholder="As on your ID"><span class="th-field__help" data-help="Used on your certificate.">Used on your certificate.</span></div>
-      <div class="th-field"><label class="th-field__label" for="em">Email</label><input class="th-input" id="em" type="email" required autocomplete="email" placeholder="you@example.com"><span class="th-field__help" data-help="Your welcome pack goes here.">Your welcome pack goes here.</span></div>
+      <div class="th-field"><label class="th-field__label" for="fn">Full name</label><input class="th-input" id="fn" name="name" required autocomplete="name" placeholder="As on your ID"><span class="th-field__help" data-help="Used on your certificate.">Used on your certificate.</span></div>
+      <div class="th-field"><label class="th-field__label" for="em">Email</label><input class="th-input" id="em" name="email" type="email" required autocomplete="email" placeholder="you@example.com"><span class="th-field__help" data-help="Your welcome pack goes here.">Your welcome pack goes here.</span></div>
     </div>
     <div class="row2">
-      <div class="th-field"><label class="th-field__label" for="ph">Phone <small>(optional)</small></label><input class="th-input" id="ph" type="tel" autocomplete="tel" placeholder="+1 416 555 0123"><span class="th-field__help">Class reminders only.</span></div>
-      <div class="th-field"><label class="th-field__label" for="lv">Current level</label><select class="th-input" id="lv"><option>Final year of high school</option><option>Gap year</option><option>Undergraduate</option><option>Repeating the test</option></select><span class="th-field__help">Helps us place you.</span></div>
+      <div class="th-field"><label class="th-field__label" for="ph">Phone <small>(optional)</small></label><input class="th-input" id="ph" name="phone" type="tel" autocomplete="tel" placeholder="+1 416 555 0123"><span class="th-field__help">Class reminders only.</span></div>
+      <div class="th-field"><label class="th-field__label" for="lv">Current level</label><select class="th-input" id="lv" name="level"><option>Final year of high school</option><option>Gap year</option><option>Undergraduate</option><option>Repeating the test</option></select><span class="th-field__help">Helps us place you.</span></div>
     </div>
-    <div class="th-field"><label class="th-field__label" for="why">Why this course? <small>(optional)</small></label><textarea class="th-input" id="why" rows="3" placeholder="A sentence or two is plenty."></textarea></div>
-    <label class="consent"><input type="checkbox" checked> Send me class reminders and my mock-test results by email.</label>
+    <div class="th-field"><label class="th-field__label" for="why">Why this course? <small>(optional)</small></label><textarea class="th-input" id="why" name="why" rows="3" placeholder="A sentence or two is plenty."></textarea></div>
+    <label class="consent"><input type="checkbox" name="reminders" value="yes" checked> Send me class reminders and my mock-test results by email.</label>
     <div class="th-notice th-notice--success hidden" id="ok" role="status"><span class="th-notice__mark" aria-hidden="true">✓</span><div><strong>Application received</strong><span class="th-muted" id="okmsg">We've emailed your welcome pack.</span></div></div>
+    <div class="th-notice th-notice--danger hidden" id="fail" role="alert"><span class="th-notice__mark" aria-hidden="true">!</span><div><strong>We couldn’t send your application</strong><span class="th-muted"> Check your connection and try again. Nothing was lost.</span></div></div>
     <div class="form-foot"><small>Takes about 3 minutes</small><button class="th-btn" type="submit">Submit application <span class="th-btn__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></button></div>
   </form>
 </aside>

@@ -12,6 +12,14 @@ Open `index.html` in a browser, or serve the folder with any static host (GitHub
 - `css/site.css` — layout for this page.
 - `js/site.js` — application drawer, form validation, step carousel and scroll reveals. No dependencies.
 
-The form is a front-end demo: it validates input and shows a confirmation, but does not send data anywhere yet. Connect it to your backend or a form service before going live.
+## Application form (Formspree)
+
+The application form sends to [Formspree](https://formspree.io). To switch it on:
+
+1. Create a form at formspree.io and copy its ID (the part after `/f/` in the form's endpoint).
+2. In `index.html`, replace `YOUR_FORM_ID` in the `<form action="https://formspree.io/f/YOUR_FORM_ID">` line with that ID.
+3. Push. Submissions then arrive in your Formspree dashboard and by email.
+
+While the placeholder is still there, the form works as a demo and sends nothing. Each submission includes the track, name, email, phone, current level, reason and reminder consent. A hidden `_gotcha` field catches spam bots.
 
 Names, dates and figures on the page are illustrative.

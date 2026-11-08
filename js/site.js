@@ -28,10 +28,21 @@
       else { bad++; box.classList.add('is-error'); el.setAttribute('aria-invalid', 'true'); help.textContent = f[2]; }
     });
     if (bad) return;
+    var form = this, btn = form.querySelector('button[type=submit]'), label = btn.firstChild.textContent;
     var t = document.querySelector('input[name=track]:checked').value.toUpperCase();
-    document.getElementById('okmsg').textContent = ' We’ve emailed your ' + t + ' welcome pack. Orientation is on the first Saturday.';
-    document.getElementById('ok').classList.remove('hidden');
-    var s = document.querySelectorAll('#form .th-step'); s[1].classList.replace('is-current', 'is-done'); s[1].removeAttribute('aria-current'); s[2].classList.add('is-current'); s[2].setAttribute('aria-current', 'step');
+    function done() {
+      document.getElementById('okmsg').textContent = ' We\u2019ve emailed your ' + t + ' welcome pack. Orientation is on the first Saturday.';
+      document.getElementById('ok').classList.remove('hidden');
+      var s = form.querySelectorAll('.th-step'); s[1].classList.replace('is-current', 'is-done'); s[1].removeAttribute('aria-current'); s[2].classList.add('is-current'); s[2].setAttribute('aria-current', 'step');
+      form.reset(); btn.disabled = true; btn.firstChild.textContent = 'Application sent ';
+    }
+    document.getElementById('fail').classList.add('hidden');
+    // Until a real Formspree form ID is in the action URL, the form stays a demo.
+    if (form.action.indexOf('YOUR_FORM_ID') !== -1) { done(); return; }
+    btn.disabled = true; btn.firstChild.textContent = 'Sending\u2026 ';
+    fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); done(); })
+      .catch(function () { btn.disabled = false; btn.firstChild.textContent = label; document.getElementById('fail').classList.remove('hidden'); });
   });
 
   // carousel
